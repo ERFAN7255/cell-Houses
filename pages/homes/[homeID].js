@@ -9,32 +9,32 @@ function SingleHome() {
   const home = db.homes.find((home) => home.id === Number(homeID));
 
   return (
-    <div className="home-details">
-      <div className="home-details-top">
-        <div className="home-img">
+    <div class="home-details">
+      <div class="home-details-top">
+        <div class="home-img">
           <img src={home ?.img} alt="" />
         </div>
-        <div className="home-interduce">
-          <div className="home-title">
+        <div class="home-interduce">
+          <div class="home-title">
             <h1>
               <span>{home ?.title}</span>
               <span>{home ?.price.toLocaleString()} تومان</span>
             </h1>
-            <div className="tags">
-              <span className="tag green-tag">ویژه</span>
-              <span className="tag brown-tag">برای اجاره</span>
+            <div class="tags">
+              <span class="tag green-tag">ویژه</span>
+              <span class="tag brown-tag">برای اجاره</span>
             </div>
-            <div className="adrress">آدرس : شیراز، میدان ارم</div>
+            <div class="adrress">آدرس : شیراز، میدان ارم</div>
           </div>
-          <div className="home-review">
-            <div className="home-review-top">
+          <div class="home-review">
+            <div class="home-review-top">
               <h2>مرور کلی</h2>
-              <p className="">
+              <p class="">
                 <span>کد ملک : </span>
                 <span>{home ?.code}</span>
               </p>
             </div>
-            <ul className="home-review-bottom">
+            <ul class="home-review-bottom">
               <li>
                 <span>نوع ملک: </span>
                 <span>{home ?.title}</span>
@@ -55,10 +55,10 @@ function SingleHome() {
           </div>
         </div>
       </div>
-      <div className="home-details-bottom">
-        <div className="home-details-description">
-          <p className="">توضیحات</p>
-          <p className="">
+      <div class="home-details-bottom">
+        <div class="home-details-description">
+          <p class="">توضیحات</p>
+          <p class="">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و

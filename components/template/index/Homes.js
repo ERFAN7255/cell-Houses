@@ -4,7 +4,7 @@ import Home from "@/components/modules/Home";
 
 function Homes() {
   return (
-    <div className="homes">
+    <div class="homes">
       {db.homes.slice(0,6).map((home) => (
         <Home key={home.id} {...home} />
       ))}
