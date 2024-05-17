@@ -39,6 +39,11 @@ function Index() {
 
   const paginateHandler = (event, page) => {
     event.preventDefault();
+    const endIndex = 3 * page;
+    const startIndex = endIndex - 3;
+    const paginatedHomes = db.homes.slice(startIndex, endIndex);
+    setPage(page);
+    setHomes(paginatedHomes);
   };
 
   return (
@@ -85,7 +90,9 @@ function Index() {
           (item, index) => (
             <li
               key={index + 1}
-              class="pagination__item"
+              class={`pagination__item ${
+                index + 1 === page ? "pagination__item_Active" : ""
+              }`}
               onClick={(event) => paginateHandler(event, index + 1)}
             >
               <a href="#" class="">
