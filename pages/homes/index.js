@@ -6,6 +6,7 @@ function Index() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("-1");
   const [homes, setHomes] = useState([...db.homes]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const newHomes = db.homes.filter((home) => home.title.includes(search));
@@ -35,6 +36,10 @@ function Index() {
       }
     }
   }, [sort]);
+
+  const paginateHandler = (event, page) => {
+    event.preventDefault();
+  };
 
   return (
     <div class="home-section" id="houses">
@@ -68,28 +73,27 @@ function Index() {
           <h1>دوره یافت نشد</h1>
         ) : (
           <>
-            {homes.map((home) => (
+            {homes.slice(0, 3).map((home) => (
               <Home key={home.id} {...home} />
             ))}
           </>
         )}
       </div>
+
       <ul class="pagination__list">
-        <li class="pagination__item">
-          <a href="#" class="">
-            {" "}
-          </a>
-        </li>
-        <li class="pagination__item">
-          <a href="#" class="">
-            2
-          </a>
-        </li>
-        <li class="pagination__item active">
-          <a href="#" class="">
-            1
-          </a>
-        </li>
+        {Array.from({ length: Math.ceil(db.homes.length / 3) }).map(
+          (item, index) => (
+            <li
+              key={index + 1}
+              class="pagination__item"
+              onClick={(event) => paginateHandler(event, index + 1)}
+            >
+              <a href="#" class="">
+                {index + 1}
+              </a>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
