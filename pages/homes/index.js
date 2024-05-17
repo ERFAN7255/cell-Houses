@@ -75,7 +75,7 @@ function Index() {
       </div>
       <div class="homes">
         {homes.length === 0 ? (
-          <h1>دوره یافت نشد</h1>
+          <h1>چیزی یافت نشد</h1>
         ) : (
           <>
             {homes.slice(0, 3).map((home) => (
